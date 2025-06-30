@@ -21,6 +21,13 @@ define hosptial = Character("Hospital Receptionist")
 define n1 = Character("Nurse 1")
 define n2 = Character("Nurse 2")
 
+# custom locations
+transform leftish:
+    xalign 0.33 yalign 0.0
+
+transform rightish:
+    xalign 0.66 yalign 0.0
+
 #images
     #kai
 image kai happy = "images/kai/happy.png"
@@ -48,22 +55,7 @@ image kidsage deadpan = "images/sage/kid/deadpan.png"
 # image kidjax superfrown = "images/jax/kid/superfrown.png"
 # image kidjax burnt = "images/jax/kid/burnt.png"
 
-    #bgs
-#image black
 
-#image kaiTreehouse
-#image gecko
-#image Zap
-#image geckoMind
-#image waterMove
-
-#image sageApartment
-#image newsPaper1
-#image newsPaper2
-#image newsPaper3
-#image newsPaperFlip
-#image newsPaperKai
-#image newsPaperZoom
 
 # The game starts here.
 
@@ -97,7 +89,7 @@ label start:
 
     sage "But I’ll let you see what happened for yourself."
 
-    scene kaiTreehouse
+    scene kaitreehouse
     # 1B Treehouse
     # [Fade in with establishing shots of The Treehouse™. Sage and Kai]
 
@@ -107,17 +99,21 @@ label start:
     sage "A frog? Another bug? "
     show kai neutral
     kai "No, no, I found a gecko!"
+    
     scene gecko
+    with fade
     kai "I caught it outside! Isn’t it cool?"
     #want to have png of gecko here, just the gecko center screen, black bg, isometric view
     #then fade back in
-    scene kaiTreehouse
+    scene kaitreehouse
+    with fade
     show kidsage happy
     sage "Woah, Kai, that’s so amazing!" # amazed
     show kidsage frown
     sage "Is it okay?"
     sage "It looks like it’s trying to run."
-    show kai thinking
+    show kidsage frown at left
+    show kai thinking at right
     kai "I think he wants to go back." 
     kai "I’ll let him do that in a second, though. "
     kai "I thought it was a new species until I realized it just didn't have a tail."
@@ -149,13 +145,16 @@ label start:
     "Tal does an exaggerated frown and reaches out to playfully shove Jax backward, but the second he touches Jax..."
     #show animation of zap (btw these are like, super zoomed in, so basically just the zap and then the immediate surroundings) 
     
-    scene Zap
+    scene talshock
 
     "he jerks away."
 
     "Tal scrambles back."
-    show kidjax superfrown
-    show kidtal scared
+
+    scene kaitreehouse
+
+    show kidjax superfrown at left
+    show kidtal scared at right
     jax "Ow! You just shocked me!" #-frown!!!
 
     tal "Sorry. I'm so sorry." # (uh oh face))
@@ -178,8 +177,8 @@ label start:
     "Tal's eyes widen and instinctively he covers Jax's hand with his own."
 
     "The flame snuffs out."
-    show kidjax smile
-    show kidtal smile
+    show kidjax smile at left
+    show kidtal smile at right
     tal "Yo." #smile - micheif
 
     jax "Bro."#smile - micheif
@@ -231,7 +230,7 @@ label start:
     hide kai
     "Sage brings the tiny gecko to her face and nudges it with the tip of her nose." 
 
-    scene geckoMind
+    scene geckomindread
 
     "Suddenly she sees into its mind, the steady pulse of its heartbeat."
     
@@ -249,14 +248,15 @@ label start:
     show kidjax frown at right
     show kidsage smile at left
     jax "That's…that's something."
-    hide kidjax
+    show kidjax at rightish
     show kidtal frown at right
     tal "So, you can control animals or something?"
     show kidsage frown
     sage "No, no, not control! I can talk to them."
 
     "Sage looks at Kai."
-    hide kidtal
+    show kidjax at leftish
+    show kidtal at rightish
     show kai frown at right
     "He seems wary and guarded."
     
@@ -272,6 +272,8 @@ label start:
     kai "I can’t do too much, but I can make it…"
     hide kidsage
     hide kai
+    hide kidjax
+    hide kidtal
 
     scene waterMove
 
@@ -288,7 +290,7 @@ label start:
     kai "That was a little lame."
     show kidtal smile at right
     tal "Yeah, it was."
-    hide kidtal
+    show kidtal at rightish
     show kidjax happy at right
     jax "Tal, shut up. This is awesome."
 
@@ -315,7 +317,6 @@ label start:
 
     sage "So no matter how special we are, we're weak. Like, according to science."
     
-    hide kai
     show kidjax at leftish
     show kidtal frown at right
     tal "Fire powers aren't weak."
