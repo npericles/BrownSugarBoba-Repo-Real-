@@ -1,1 +1,2 @@
-# BrownSugarBoba-Repo-Real-
+# Brown-Sugar-Boba
+Stuy RenPy Group
