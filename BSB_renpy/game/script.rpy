@@ -1,63 +1,69 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
 #characters
-    define kidsage = Character("Sage")
-    define kidjax = Character("Jax")
-    define kidtal = Character("Tal")
+define kidsage = Character("Sage")
+define kidjax = Character("Jax")
+define kidtal = Character("Tal")
 
-    define kai = Character("Kai")
-    define sage = Character("Sage")
-    define jax = Character("Jax")
-    define tal = Character("Tal")
-    define raven = Character("Raven")
-    define mom = Character("Sage's Mom")
-    define boss = Character("Kai's Employer")
-    define engineer = Character("Nikolai")
-    define scientist = Character("Ms. Frermi")
-    define hosptial = Character("Hospital Receptionist")
-    define n1 = Character("Nurse 1")
-    define n2 = Character("Nurse 2")
+define kai = Character("Kai")
+define sage = Character("Sage")
+define jax = Character("Jax")
+define tal = Character("Tal")
+define raven = Character("Raven")
+define mom = Character("Sage's Mom")
+define boss = Character("Kai's Employer")
+define engineer = Character("Nikolai")
+define scientist = Character("Ms. Frermi")
+define hosptial = Character("Hospital Receptionist")
+define n1 = Character("Nurse 1")
+define n2 = Character("Nurse 2")
 
 #images
     #kai
-    image kai happy = "images/kai/happy.png"
-    image kai neutral = "images/kai/neutral.png"
-    image kai smile = "images/kai/smile.png"
-    image kai frown = "images/kai/frown.png"
+image kai happy = "images/kai/happy.png"
+image kai neutral = "images/kai/neutral.png"
+image kai smile = "images/kai/smile.png"
+image kai frown = "images/kai/frown.png"
     #image kai thinking = "images/kai/thinking.png"
     #sage
-    image kidsage happy = "images/sage/kid/happy.png"
-    image kidsage neutral = "images/sage/kid/neutral.png"
-    image kidsage smile = "images/sage/kid/smile.png"
-    image kidsage frown = "images/sage/kid/frown.png"
-    image kidsage deadpan = "images/sage/kid/deadpan.png"
+image kidsage happy = "images/sage/kid/happy.png"
+image kidsage neutral = "images/sage/kid/neutral.png"
+image kidsage smile = "images/sage/kid/smile.png"
+image kidsage frown = "images/sage/kid/frown.png"
+image kidsage deadpan = "images/sage/kid/deadpan.png"
     # #tal
-    # image kidtal neutral = "images/tal/kid/nuetral.png"  <- have not been entered into files yet
-    # image kidtal smile = "images/tal/kid/smile.png"
-    # image kidtal frown = "images/tal/kid/frown.png"
-    # image kidtal scared = "images/tal/kid/scared.png"
+# image kidtal neutral = "images/tal/kid/nuetral.png"  <- have not been entered into files yet
+# image kidtal smile = "images/tal/kid/smile.png"
+# image kidtal frown = "images/tal/kid/frown.png"
+# image kidtal scared = "images/tal/kid/scared.png"
 
     # #jax
-    # image kidjax happy = "images/jax/kid/happy.png"
-    # image kidjax neutral = "images/jax/kid/neutral.png"
-    # image kidjax smile = "images/jax/kid/smile.png"
-    # image kidjax frown = "images/jax/kid/frown.png"
-    # image kidjax superfrown = "images/jax/kid/superfrown.png"
-    # image kidjax burnt = "images/jax/kid/burnt.png"
+# image kidjax happy = "images/jax/kid/happy.png"
+# image kidjax neutral = "images/jax/kid/neutral.png"
+# image kidjax smile = "images/jax/kid/smile.png"
+# image kidjax frown = "images/jax/kid/frown.png"
+# image kidjax superfrown = "images/jax/kid/superfrown.png"
+# image kidjax burnt = "images/jax/kid/burnt.png"
 
     #bgs
-        #image kaiTreehouse
+#image black
 
-        #image sageApartment
-        #image newsPaper1
-        #image newsPaper2
-        #image newsPaper3
-        #image newsPaperFlip
-        #image newsPaperKai
-        #image newsPaperZoom
+#image kaiTreehouse
+#image gecko
+#image Zap
+#image geckoMind
+#image waterMove
+
+#image sageApartment
+#image newsPaper1
+#image newsPaper2
+#image newsPaper3
+#image newsPaperFlip
+#image newsPaperKai
+#image newsPaperZoom
 
 # The game starts here.
 
@@ -68,7 +74,7 @@ label start:
     # images directory to show it.
 
 #scene 1 - 15 Years Before, Kai's House
-    scene bg kaiTreehouse
+    scene black
 
     # [All black. sage.]
     # 1A ALL BLACK SAGE
@@ -81,7 +87,7 @@ label start:
 
     sage "Only God knows how many playdates we had. We hung out every single day after school."
 
-    sage "Our favorite spot was Kai’s house, because he had a treehouse and his moms were incredibly kind."
+    sage "Our favorite spot was Kai’s place. He had a treehouse afterall and his moms were incredibly kind."
 
     sage "It got harder to stay connected when we got into our high school years, because a lot of us moved away."
 
@@ -91,6 +97,7 @@ label start:
 
     sage "But I’ll let you see what happened for yourself."
 
+    scene kaiTreehouse
     # 1B Treehouse
     # [Fade in with establishing shots of The Treehouse™. Sage and Kai]
 
@@ -100,9 +107,11 @@ label start:
     sage "A frog? Another bug? "
     show kai neutral
     kai "No, no, I found a gecko!"
+    scene gecko
     kai "I caught it outside! Isn’t it cool?"
     #want to have png of gecko here, just the gecko center screen, black bg, isometric view
     #then fade back in
+    scene kaiTreehouse
     show kidsage happy
     sage "Woah, Kai, that’s so amazing!" # amazed
     show kidsage frown
@@ -128,9 +137,9 @@ label start:
 
     "Sage always kept one eye open whenever she saw Jax playing with Tal."
     "Tal started hanging out with the rest of the friend group a few months ago, but sometimes he'll get worked up and the air will feel charged, like a storm is brewing somewhere."
-    #show kidtal smile at right
+    show kidtal smile at right
     tal "Okay, well, maybe you won this game, but you won’t win the next!"
-    #show kidjax smug at left
+    show kidjax smug at left
     jax "We’ll see about that!"
 
     jax "My parents say that I’m really good at this game."
@@ -139,35 +148,38 @@ label start:
 
     "Tal does an exaggerated frown and reaches out to playfully shove Jax backward, but the second he touches Jax..."
     #show animation of zap (btw these are like, super zoomed in, so basically just the zap and then the immediate surroundings) 
+    
+    scene Zap
+
     "he jerks away."
 
     "Tal scrambles back."
-    #show kidjax superfrown
-    #show kidtal scared
+    show kidjax superfrown
+    show kidtal scared
     jax "Ow! You just shocked me!" #-frown!!!
 
     tal "Sorry. I'm so sorry." # (uh oh face))
-    #show kidjax burnt
+    show kidjax burnt
     jax "Wait, wait, Tal. That wasn’t, like, the natural type of shock, right? That was you?" 
 
     "Hesitantly, Tal nods."
     
-    #show kidjax happy
+    show kidjax happy
     jax "That's so, so cool."#happy
-    #show kidjax neutral
+    show kidjax neutral
     jax "Tal, I want to show you something, because I can do something kinda like that, but you can’t tell anyone, okay?"#neutral
-    #show kidtal frown
+    show kidtal frown
     tal "Okay… what is it?"
 
-    #hide kidjax
-    #hide kidtal
+    hide kidjax
+    hide kidtal
     "A small flame bursts to life in Jax’s palm."
 
     "Tal's eyes widen and instinctively he covers Jax's hand with his own."
 
     "The flame snuffs out."
-    #show kidjax smile
-    #show kidtal smile
+    show kidjax smile
+    show kidtal smile
     tal "Yo." #smile - micheif
 
     jax "Bro."#smile - micheif
@@ -180,8 +192,8 @@ label start:
 
     jax "We were so meant to be friends." #, grinning
     
-    #hide kidjax
-    #hide kidtal
+    hide kidjax
+    hide kidtal
     "Sage looks over at Kai, who’s still taking notes in his field notebook, his brow furrowed in concentration. "
 
     "She looks at Jax and Tal, who coincidentally look at her, and the two of them immediately look away."
@@ -191,10 +203,10 @@ label start:
 
     # next two dialogues in : normal sprite
     
-    #show kidjax neutral at right
+    show kidjax neutral at right
     jax "What are you talking about?"
-    #show kidjax neutral at rightish
-    #show kidtal neutral at right
+    show kidjax neutral at rightish
+    show kidtal neutral at right
     tal "No you didn't. You didn't see anything."
 
     sage "…"
@@ -206,8 +218,8 @@ label start:
     tal "Me too."
 
     hide kidsage
-    #hide kidtal
-    #hide kidjax
+    hide kidtal
+    hide kidjax
     show kai thinking
     kai "What's going on? Wait, Jax. We have at least two more hours before you need to go home, what are you talking about?"
 
@@ -216,7 +228,11 @@ label start:
     show kidsage smile
     sage "You guys are so dumb. Here, I have something too."
     hide kidsage
+    hide kai
     "Sage brings the tiny gecko to her face and nudges it with the tip of her nose." 
+
+    scene geckoMind
+
     "Suddenly she sees into its mind, the steady pulse of its heartbeat."
     
     #should be some kid of animation here of a pulsing heart beat
@@ -225,24 +241,28 @@ label start:
 
     "The gecko stops trying to run away, and it seems to automatically cheer up, making a noise that seems almost pleased."
 
+    scene kaiTreehouse
+
     "Sage turns to the others expectantly." 
 
     "She smiles. Her mother had always told her that most humans didn't have special powers, but seeing Jax and Tal’s abilities made her realize she wasn't isolated."
-    #show kidjax frown at right
+    show kidjax frown at right
     show kidsage smile at left
     jax "That's…that's something."
-    #hide kidjax
-    #show kidtal frown at right
+    hide kidjax
+    show kidtal frown at right
     tal "So, you can control animals or something?"
     show kidsage frown
     sage "No, no, not control! I can talk to them."
 
     "Sage looks at Kai."
-    #hide kidtal
-    #show kai frown at right
+    hide kidtal
+    show kai frown at right
     "He seems wary and guarded."
     
     kai "Mine is water."
+
+    show kidsage neutral
 
     sage "What?"
 
@@ -253,6 +273,8 @@ label start:
     hide kidsage
     hide kai
 
+    scene waterMove
+
     #should be some sort of animation of either water moving, or the cup
     "kai flicks his finger, and the water in a half-filled paper cup sloshes over the rim."
     
@@ -260,12 +282,14 @@ label start:
 
     "The water seeps into the wooden floorboards."
 
-    #show kai frown at left
+    scene kaiTreehouse
+
+    show kai frown at left
     kai "That was a little lame."
-    #show kidtal smile at right
+    show kidtal smile at right
     tal "Yeah, it was."
-    #hide kidtal
-    #show kidjax happy at right
+    hide kidtal
+    show kidjax happy at right
     jax "Tal, shut up. This is awesome."
 
     jax "You guys too?"
@@ -274,7 +298,7 @@ label start:
     sage "Yeah."
 
     kai "No one else is supposed to know."
-    #show kidjax frown
+    show kidjax frown
     jax "Your parents told you to keep it a secret?"
 
     kai "Yeah. Yours too?"
@@ -292,39 +316,39 @@ label start:
     sage "So no matter how special we are, we're weak. Like, according to science."
     
     hide kai
-    #show kidjax at leftish
-    #show kidtal frown at right
+    show kidjax at leftish
+    show kidtal frown at right
     tal "Fire powers aren't weak."
 
     jax "Guys, I feel like you’re really ignoring a big part of this."
 
     tal "What?"
-    #show kidjax smile
+    show kidjax smile
     jax "Imagine what our pranks would be like. With all four of us, we can screw around with so many people-"
     show kidsage deadpan
     sage "No."
-    #show kidjax superfrown
+    show kidjax superfrown
     jax "But" # dismayed
-    #show kidtal at rightish
-    #show kai frown at right
+    show kidtal at rightish
+    show kai frown at right
     kai "No."
-    #show kidjax frown
+    show kidjax frown
     jax "Okay."
-    #show kidjax smile
+    show kidjax smile
     jax "But this is cool, isn't it? I thought I was the only one."
     show kai thinking
     kai "I still don't think…nevermind."
     show kidsage smile
     sage "It'll be between us. Friends forever, right?"
-    #show kidjax smile
-    #show kai smile
-    #show kidtal smile
+    show kidjax smile
+    show kai smile
+    show kidtal smile
     jax "Yeah. Yeah, let's shake on it."
 
-    #hide kidsage
-    #hide kidjax
-    #hide kidtal
-    #hide kai
+    hide kidsage
+    hide kidjax
+    hide kidtal
+    hide kai
     "The four of them shake on it."
 
     "After that day, the secret brought them together like an invisible thread. It was something cool that made them all feel special and, for years, their promise held true."
@@ -452,9 +476,9 @@ label start:
             
             "She skims the rest of the newspaper."
 
-            "Twenty-one year old Kai Elsher died on May 24th. He had a peaceful death in the hospital, being tended to by a team of medical professionals. His medical costs were covered by his parents and an anonymous patron.”
+            "Twenty-one year old Kai Elsher died on May 24th. He had a peaceful death in the hospital, being tended to by a team of medical professionals. His medical costs were covered by his parents and an anonymous patron."
 
-            "He came to the hospital with electrical shocks spotting his entire body, unconscious. He never got to wake up.”
+            "He came to the hospital with electrical shocks spotting his entire body, unconscious. He never got to wake up."
 
             sage "Electricity?"
 
@@ -464,11 +488,11 @@ label start:
 
             "She continues reading."
 
-            "So, how did an outdated source of energy injure him in his last moments? This is a question experts are still pondering.”
+            "So, how did an outdated source of energy injure him in his last moments? This is a question experts are still pondering."
 
             "Locals have been theorizing how he could’ve died."
 
-            "Sixty-two year old Paul Goodman says, ‘It’s one of those goddamn gangs. I’ve seen so much increased criminal activity around here. Just last Tuesday, I got robbed! I bet one of those wicked crooks are experimenting with electricity now.’”
+            "Sixty-two year old Paul Goodman says, ‘It’s one of those goddamn gangs. I’ve seen so much increased criminal activity around here. Just last Tuesday, I got robbed! I bet one of those wicked crooks are experimenting with electricity now.’"
 
             "Another local agrees, saying—"
 
@@ -478,13 +502,13 @@ label start:
 
             sage "They’re making conspiracy theories on his death?"
 
-            Sage: They don’t even know anything about him. They’ve never seen him in person, or heard him rant about types of worms in second grade. Nothing.
+            sage "They don’t even know anything about him. They’ve never seen him in person, or heard him rant about types of worms in second grade. Nothing."
 
-            Sage: They don’t know about the treehouse.
+            sage "They don’t know about the treehouse."
 
-            Sage: Nothing! Absolutely nothing!
+            sage "Nothing! Absolutely nothing!"
 
-            Narrator: Vaguely, Sage realizes that she’s shaking. She takes a breath, trying to calm herself down.
+            "Vaguely, Sage realizes that she’s shaking. She takes a breath, trying to calm herself down."
 
 
 #[Return to the menu with choices. Have to choose the other choice before continuing.]
@@ -493,9 +517,9 @@ label start:
 
 #[Options merge here]
 
-    sage And my friends…
+    sage "And my friends…"
 
-    "A sense of urgency hit her.
+    "A sense of urgency hit her."
 
     sage "Oh my god, I need to see them. Now."
 
