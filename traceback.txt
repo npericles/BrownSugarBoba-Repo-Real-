@@ -1,24 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 667, in script
-    Tal "Of course I haven't talked to him, Sage."
-Exception: Sayer 'Tal' is not defined.
+  File "game/script.rpy", line 1049, in script
+    june "Hey, kids, I know you’re looking around, but I’ve got some lemonade made for you all."
+Exception: Sayer 'june' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 667, in script
-    Tal "Of course I haven't talked to him, Sage."
+  File "game/script.rpy", line 1049, in script
+    june "Hey, kids, I know you’re looking around, but I’ve got some lemonade made for you all."
   File "/Users/michellelee/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 2586, in execute
     Say.execute(self)
   File "/Users/michellelee/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 583, in execute
     who = eval_who(self.who, self.who_fast)
   File "/Users/michellelee/Desktop/renpy-8.3.7-sdk/renpy/ast.py", line 472, in eval_who
     raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'Tal' is not defined.
+Exception: Sayer 'june' is not defined.
 
 macOS-15.4.1-arm64-arm-64bit arm64
 Ren'Py 8.3.7.25031702
 Brown Sugar Boba 1.0
-Sat Jul  5 21:35:16 2025
+Tue Jul  8 21:16:29 2025

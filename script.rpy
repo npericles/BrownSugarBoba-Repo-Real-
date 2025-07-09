@@ -10,6 +10,7 @@ define kidtal = Character("Tal")
 define sage = Character("Sage")
 define jax = Character("Jax")
 define tal = Character("Tal")
+define june = Character("June")
 
 define kai = Character("Kai")
 define sage = Character("Sage")
@@ -81,7 +82,8 @@ image jax worry = "images/jax/adult/worry.png"
 
     # backgrounds
 #image kaitreehouse
-#image 
+#image sageApartment
+#image talHouse
 
 # The game starts here.
 
@@ -382,6 +384,7 @@ label start:
 
 #scene 2 - sage's Car
     scene sageApartment
+    show sage neutral
 
     #Inside a small apartment. Sage.
 
@@ -391,11 +394,11 @@ label start:
 
     sage "God, it’s too early for this."
 
-    sage "But I should probably get a gauge of what’s happening in the world before I head to work."
+    sage "But I should probably get a gauge of what's happening in the world before I go to work."
 
     #Image of one page of the newspaper, filling practically the whole page. It has the headline “NEW MAGICAL BOTS DEVELOPED BY NIKOLAI ZHAMONOV—IS THIS THE END OF LIFE AS WE KNOW IT?”
     scene newsPaper1 #same as sageApartment but with overlay of the newspaper and car as bg blured
-
+    show sage neutral
     sage "Huh. Interesting."
 
     sage "There’s been a lot of talk about how dangerous new technology can be…"
@@ -406,30 +409,34 @@ label start:
     
     #Image of next page of the newspaper with the headline “LOCAL MAN ARRESTED FOR STRANGLING A GOOSE”
     scene newsPaper2
+    show sage nervous
     sage "I’ll pretend I didn’t see that one."
  
     "She flips the page."
     scene newsPaper3
     #Image of the next page with fashion and outfits. Or something that’s easier to draw idk.
     # "She flips past the next few pages." <- could replace animation with this line and scene sageCar
-
+    show sage neutral
     scene newsPaperFlip
+    show sage neutral
     "Boring, boring, boring…"
 
     #Image of a newspaper with an old picture of Kai with the header “MAN FOUND WITH ELECTRICAL SHOCKS ON HIS BODY”. The photo is just an amalgamation of vague colors and it’s not clear yet
 
     #"She stops flipping the page."
     scene newsPaperKai
+    show sage nervous
     sage "Wait…"
 
     "She looks closer."
     # Zoomed in image of Kai
     scene newsPaperZoom
+    show sage scared
     sage "Is that—"
 
     "A phone call rings."
     scene sageCar
-
+    show sage neutral
     "The call is from her mother."
 
     "She picks up."
@@ -447,7 +454,7 @@ label start:
     mom "(God, I wish I could talk to you in person right now.)"
 
     mom "But there’s been a development." 
-
+    
     "Suddenly, dread creeps up her throat." 
 
     "She picks up the newspaper again, raising it to read it—"
@@ -462,13 +469,13 @@ label start:
 
     # Zoom in to the newspaper. Image of Kai smiling. 
     # Should probably do the zoom in here instead or js get rid of the "--and she sees the photo." - Nicaiah
-
+    show sage scared
     mom "I’m so sorry."
 
     mom "I know that—"
-
+    show sage neutral
     "Sage hangs up."
-
+    show sage angry
     "Anger builds and bubbles in her."
 
     sage "'Sorry'?"
@@ -478,7 +485,7 @@ label start:
     sage "It wouldn’t fucking save him, that’s for sure."
 
     sage "My best friend for the first thirteen years of my life. He was there for more than half my existence."
-
+    show sage neutral
     "She closed her eyes."
 
     "The world around her suddenly seemed too loud and unwieldy, and she wanted to rip the newspaper to shreds."
@@ -561,11 +568,12 @@ label start:
 
 
 #scene 3 - Tal's House
-    scene tal house
+    scene talHouse
+    show sage nervous
     "Sage takes a deep breath."
     sage "I haven’t been here in so long… I never even knew what the inside of his house looked like. He only ever let Jax in."
     menu:
-        "Knock on door":
+        "Knock on do. or":
             #knocking sound effect
             "Nobody responds."
    
@@ -596,7 +604,7 @@ label start:
     tal "Sure."
 
     #scene 3b
-    scene taltreehouseinside #need the art for inside tal's treehouse
+    scene talHouse #need the art for inside tal's house
     show sage nervous at left
     show tal neutral at right
     "He leads her into his house, clearing the kitchen table and sitting across from her."
@@ -727,9 +735,400 @@ label menu1:
 
     tal "See you, Sage."
 
+# Scene 4: Jax’s House
+    scene jaxHouse
 
-#scene 4 - Jax's House
-    scene jax house
+    show sage nervous at left
+    show jax neutral at right
+
+    jax "Come, take a seat."
+
+    jax "If you came to tell me about Kai, I already know."
+
+    sage "What?"
+
+    show jax worry
+
+    jax "Yeah, I saw it in the news."
+
+    show jax neutral
+
+    jax "I don’t usually look at the newspaper, but I saw it as I was about to throw it out."
+
+    show sage neutral
+
+    sage "Oh."
+
+    show jax worry
+
+    jax "…"
+
+    jax "Can you give me a sec? (Cough)"
+
+    sage "Oh. Uh… sure."
+
+    hide jax worry
+
+    show sage neutral at center
+
+    "Jax leaves. Now it's just Sage here."
+    
+    "..."
+
+    show sage nervous at center
+    
+    "A bit awkward, isn't it."
+
+    "When Jax comes back, it looks like he's just cried."
+
+    show jax worry at right
+    show sage nervous at left
+
+    jax "…It’s so tragic. He was barely an adult, and he’s already gone?"
+
+    jax "God, it’s depressing."
+
+    jax "I don’t really know anything about his life and what he did, but I know he was doing big things."
+
+    jax "It’s one of those feelings, you know?"
+
+    menu:
+        "Express anger":
+            show sage angry
+            sage "That newspaper was so disgusting; I couldn’t finish it."
+
+            sage "They are making sport of him, weren’t they?"
+
+            sage "With their weird conspiracy theories, treating him like he’s just some object of gossip."
+
+            sage "Gangs experimenting with electricity? Who the hell believes that?"
+            show jax anger
+            jax "I wanted to throw up when I read it."
+
+            jax "I don’t know what type of person would write that type of article."
+            show jax worry
+            jax "…But I have no idea how he would be killed from electricity, either."
+        "Express grief":
+            show sage nervous 
+            sage "I…couldn’t believe he died."
+
+            sage "He was one of my best friends."
+
+            sage "I miss him. A lot."
+            
+            jax "I’m sorry, Sage."
+
+            sage "Yeah, well, I’m sorry for you as well."
+
+    show sage neutral
+    sage "Are you going to work today?"
+
+    "Jax looks conflicted."
+
+    jax "Yeah. My shift’s in the afternoon, so I’ll be going soon."
+
+    sage "What if you call in sick today?"
+    show jax shock
+    jax "What?"
+    show sage nervous
+    sage "I talked to Tal today, and he wasn’t looking good."
+
+    sage "There were bottles of alcohol completely filling up his garbage can."
+
+    sage "His eyes…seemed unfocused."
+    show jax worry
+    sage "I don’t think he’d gotten out of bed in a while, but he still seemed so tired."
+
+    "Jax was leaning forward. His hands were clutching the sofa tightly."
+
+    jax "What did he say?"
+
+    sage "Just pretended he was fine and—and broke down after I told him the news."
+
+    jax "He’s not okay."
+
+    sage "He’s not."
+    show sage neutral
+    sage "What I think we have to do is get together. You saw that newspaper, right? Those reporters didn’t know anything about where that electricity came from."
+
+    sage "I just want closure right now. Maybe his parents know something about it or have stories about Kai that they’d want to share."
+
+    sage "I think it would be appropriate. All of us getting together, even if it’s just for today."
+    show jax neutral
+    jax "And you also think it would be better to try to recover together."
+
+    sage "…Well, yeah, especially since Tal didn’t look great and you probably don’t feel great either."
+
+    sage "But I think it’d be important for all of us."
+
+    sage "Something just feels…terrifying now, knowing that Kai isn’t with us anymore."
+    show jax happy
+    jax "I feel the same way."
+
+    "Jax looks like he’s thinking through something."
+
+    jax "Okay. I’ll call my boss right now."
+
+    jax "I’m sure he’ll understand if I explain the circumstances to him."
+    show sage happy
+    sage "Thank you so much, Jax."
+
+    sage "Meet me at Kai’s house in thirty minutes."
+
+# Scene 5: Treehouse Interior
+    scene kaiTreehouse
+    show tal neutral at left
+    show sage neutral at center
+    show jax neutral at right
+    jax "It's been so long."
+
+    "The treehouse has changed since Sage was a child: the far corner has a desk now, the walls have more sketch-filled papers, one end has been renovated to fit a giant map."
+
+    sage "...Yeah."
+    sage "I should've visited more."
+
+    "Tal takes in the scene and swallows hard."
+
+    tal "Me too. I just wish…"
+
+    "He looks away."
+
+    sage "It was really nice of his moms to let us visit again."
+
+    jax "Yeah. What did you tell them?"
+
+    sage "That we want to…god, I feel so bad."
+
+    sage "I just said we wanted to ask some questions and get closure."
+
+    sage "I'll make them cookies. I'll…make scones and apple pie."
+
+    jax "I'll make them cappuccinos."
+
+    sage "They're probably in shock. I mean, your son leaves the house and never comes back, and then the next time you hear about him he's dead."
+
+    jax "Yeah. Kai was…always like that, a little. So secretive about everything."
+
+    sage "He could've said something. Or like, I don't know, I could've hung out with him more and he might've told me a secret and…"
+
+    "Sage trails off and looks around."
+
+    sage "June said he spent a lot of time here."
+
+    sage "She said we could look around."
+
+    "What do you look at?"
+
+    menu: #make it so player has to explore all options
+        "Map":
+            scene map
+            sage "Why do you think he circled those placed?"
+
+            tal "Maybe they’re placed that are important to him."
+
+            jax "It’d be strange if a forest is important to him."
+
+            jax "All the places seemed pretty scattered, though."
+
+            sage "Is that a lab that’s circled?"
+
+            jax "Yeah. Fermi Laboratories."
+
+            sage "I remember him telling me something about this. He worked there, I believe."
+
+        "Textbooks on water":
+            "There is a stack of textbooks on water on the desk."
+
+            sage "Maybe he was learning about his own powers."
+
+            sage "We’ve lived with them our whole lives. With a scientist like Kai, he must’ve gotten curious about it at some point."
+
+            jax "Or not. Water is an important part of chemistry. And he’s bound to be more interested in water than the average person."
+
+            tal "Whole textbooks on it, Jax? I’m not a scientist, but I don’t think I’d be obsessed with water specifically if I didn’t happen to also have water abilities."
+
+        "Metal":
+
+            "There were pieces of metal, in different shapes, in the corner."
+
+            tal "Personally, I don’t know what to make of this."
+
+            jax "Me neither."
+
+            sage "Yeah, I mean, he was a scientist, and scientists do weird things. He was a chronic tinkler, I’m betting."
+
+        "The newspaper":    
+            scene newspaper #Picture of a clipping stuck to Kai’s journal, which is basically a yapfest on Nikolai Zhamonov
+
+            sage "Oh this guy."
+
+            tal "Who now?"
+
+            sage "Nikolai Zhamonov… people at school are talking about him all the time. He’s making these advanced machines and stuff…"
+
+            jax "Why does Kai care?"
+
+            sage "… Fantastic point."
+
+            tal "…"
+
+            tal "Maybe Kai had a crush."
+
+            sage "A crush?"
+
+            tal "He doesn’t even look that good, though."
+
+            jax "Says Nikolai is an engineer. That’s in the same vein as science, and Kai studied bio."
+
+            jax "Maybe they were friends?"
+
+            sage "We were his friends."
+
+            jax "…"
+
+            tal "…"
+
+            tal "That’s a pretty bold statement. At this point."
+
+            jax "Uh, nevermind. Nikolai’s eight years older. Although maybe they were colleagues?"
+
+            sage "He was probably just a role model. Smart guy and all that."
+
+            jax "Yeah, probably."
+
+    "After they finished looking, Tal goes off and looks at the spot where he and Jax used to play."
+
+    "Sage and Jax look under the textbooks."
+
+    "There are annotated pictures of Sage, Jax, and Tal."
+
+    #[The music stops.]
+
+    sage "Oh wow."
+
+    jax "Huh."
+
+    "She looks closer at the words scribbled on the side of each photograph."
+
+    "Which one should she read first?"
+
+    menu: #make it so that player has to explore all options
+        "Jax":
+            "It’s a picture of Jax in middle school holding a baseball bat. He looks proud."
+
+            sage "Jax: fire, couldn’t hold fire for more than five seconds due to asthma, could only create fire the size of his fist."
+
+            jax "I didn’t know he was observing me that closely."
+
+            jax "That information was true when I was ten, but I think my power has gotten a bit better."
+
+        "Sage":
+            "It’s a picture of Sage in middle school bending down next to a squirrel. She’s smiling."
+
+            sage "Sage: talks to animals, can seem to only speak to smaller animals, cannot make demands of them but can convince them."
+
+            sage "I used to think I could grow up to be an amazing spy because of that."
+
+            jax "You still can."
+
+            sage "Sure, but I’d just get arrested for that now."
+
+        "Tal":
+            "It’s a picture of Tal in middle school. He is chasing after the person behind the camera, his arms and legs a blur. He’s trying to hide a smile."
+
+            "Tal's photograph has a lot more circles, question marks, and exclamation marks on it."
+
+            sage "Tal: electricity. Often needs to ‘recharge' between shocks, could only mildly shock three to four times before becoming exhausted."
+
+            jax "Hold on, check the back of the photo. I think I saw something."
+
+            "Sage flips the photograph, and there’s some notes written there."
+
+            sage "Lots of information about electricity has been lost. How much would need to be used to light a lamp? To power a vehicle? What about if he ever used his power on something metallic? How far could his electricity spread, and does it differ from normal electricity in any way?"
+
+            jax "He really seemed interested in electricity."
+
+    june "Hey, kids, I know you’re looking around, but I’ve got some lemonade made for you all."
+
+    june "I’ll be in the living room."
+
+    tal "I’ll be down in a second."
+
+    "Tal turns to Sage and Jax."
+
+    tal "You two coming too?"
+
+    "Jax looks at the photographs in his hand."
+
+    jax "Tal—"
+
+    show tal neutral
+
+    tal "What."
+
+    jax "Nevermind. You can go."
+
+    "Tal doesn’t spare Jax or Sage a second look before he leaves."
+
+    hide tal neutral
+
+    sage "I genuinely didn't know Kai still cared about this stuff—his abilities and everything. The last time I saw him he could barely summon a puddle of water."
+
+    jax "I think he was trying to figure out more stuff about his powers. But… why?"
+
+    sage "Because he's Kai. Look at this – biochemistry, a guide to different types of ponds and rain clouds. He went all-out."
+
+    jax "Yeah. Once he got obsessed with something, that was it. Remember that time he had his lizard phase?"
+
+    tal "He was really interested in us, too."
+
+    "The two of them look at the pictures of when all four of them had been so much younger."
+
+    jax "I kinda thought he forgot about us. Why did he never say anything?"
+
+    sage "…"
+
+    jax "What?"
+
+    sage "He did say something."
+
+    jax "Is there something you didn't tell me?"
+
+    sage "Two years ago he wrote me a letter. Talking about how maybe we could hang out sometime, and his school was finally letting up on his exams."
+
+    jax "Did you respond?"
+
+    sage "I said maybe sometime. But I never really followed up."
+
+    sage "I keep thinking about that day. What if he felt lonely, Jax? What if he was looking at all of us and our powers because he wanted for us to be together again and he didn't know how to ask?"
+
+    sage "Do you think he…killed himself?"
+
+    jax "No, what?"
+
+    jax "Electricity killed him. Don’t you think there are easier ways to commit suicide?"
+
+    jax "Why would he go for electricity?"
+
+    jax "…"
+
+    jax "Kai never wrote me a letter, but…did he seem sad in the letter?"
+
+    sage "I don't remember. Not really, I guess, but being sad isn't obvious sometimes."
+
+    "Jax nods, pondering for a moment."
+
+    jax "Sage, it's not your fault."
+
+    "After a moment, Sage steels herself and nods stiffly."
+
+    sage "It was weird seeing the pictures of us, with all of the notes on them."
+
+    jax "We should show Tal, maybe ask him what he thinks. It is a picture of him, after all."
+
+    sage "Yeah, definitely."
+
+
 #scene 5 - Kai's Treehouse
     scene outside treehouse
 #scene 6 - Outside Treehouse

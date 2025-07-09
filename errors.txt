@@ -1,0 +1,25 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 618: expected statement.
+    [If “Make small talk”]
+                          ^
+
+File "game/script.rpy", line 620: end of line expected.
+(Perhaps you left out a " at the end of the first line.)
+    sage "Do you drink this often?
+    
+        tal "Oh, no, no. Just sometimes. I like having a bottle every other day, and one at the end of the week, just to help the start of the next one.
+               ^
+
+File "game/script.rpy", line 642: expected statement.
+    [If “Break the news to him]
+                               ^
+
+File "game/script.rpy", line 699: expected menuitem
+    “Don’t comfort him”
+    ^
+
+Ren'Py Version: Ren'Py 8.3.7.25031702
+Sat Jul  5 21:01:06 2025
